@@ -1950,10 +1950,14 @@
   },
   "groupId": "requestAnimationFrame,requestIdleCallback,stopPropagation,stopImmediatePropagation",
   "keywords": [
-    "requestAnimationFrame",
-    "requestIdleCallback",
-    "stopPropagation",
-    "stopImmediatePropagation"
+    "request",
+    "Animation",
+    "Frame",
+    "Idle",
+    "Callback",
+    "stop",
+    "Propagation",
+    "Immediate"
   ],
   "content": "requestAnimationFrame = Runs code before the next browser repaint\r\nrequestIdleCallback = Runs code when the browser is idle\r\nstopPropagation  = Stops bubbling to parent but dont stop other listner\r\nstopImmediatePropagation = Stops bubbling to parent and other listner\r\n",
   "ct": "javascript",
@@ -1962,7 +1966,7 @@
     "$date": "2026-10-04T07:26:20.176Z"
   },
   "updatedAt": {
-    "$date": "2026-10-04T07:26:20.176Z"
+    "$date": "2026-10-04T08:16:48.963Z"
   },
   "__v": 0
 },
