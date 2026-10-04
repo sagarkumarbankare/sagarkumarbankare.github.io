@@ -1,1 +1,2146 @@
-[{"lang":"js","subject":"node","keywords":["react","data","scope"],"content":"react content"},{"lang":"js","subject":"react","keywords":["stateless","state","useeffect"],"content":"stateless content"}] 
+[{
+  "_id": {
+    "$oid": "6ac1f451ad8593621e2957cc"
+  },
+  "groupId": "var, let, and const",
+  "keywords": [
+    "var",
+    "let",
+    "const"
+  ],
+  "content": "var, let, and const.\r\nvar: Function-scoped, can be redeclared and updated. It is hoisted and initialized with undefined.\r\nlet: Block-scoped, can be updated but not redeclared in the same scope. It is hoisted but not initialized.\r\nconst: Block-scoped, cannot be updated or redeclared.\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:38:09.915Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:39:29.472Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f492ad8593621e2957cf"
+  },
+  "groupId": "Hoisting",
+  "keywords": [
+    "Hoisting"
+  ],
+  "content": "Hoisting\r\nHoisting is a  behavior where declarations are moved to the top of their scope during compilation, before the code executes. \r\n\r\nconsole.log(a); // undefined\r\nvar a = 10;\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:39:14.024Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:39:14.024Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f4bead8593621e2957d5"
+  },
+  "groupId": "Temporal Dead Zone (TDZ)",
+  "keywords": [
+    "Temporal Dead Zone",
+    "TDZ"
+  ],
+  "content": "Temporal Dead Zone (TDZ)\r\nperiod between when a variable is declared and when it is initialized. During this time, you cannot access variables declared with let or const.\r\nExample\r\nconsole.log(a); // ❌ ReferenceError\r\nlet a = 10;\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:39:58.538Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:39:58.538Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f4e1ad8593621e2957d8"
+  },
+  "groupId": "Lexical scope",
+  "keywords": [
+    "Lexical",
+    "scope"
+  ],
+  "content": "Lexical scope\r\nA function can access variables from its own scope and its outer (parent) scopes, but not from inner scopes.\r\n\r\nfunction outer() {\r\n  let x = 10;\r\n  function inner() {\r\n    console.log(x); // works\r\n  }\r\n  inner();\r\n}\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:40:33.073Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:40:33.073Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f4ffad8593621e2957db"
+  },
+  "groupId": "closure",
+  "keywords": [
+    "closure"
+  ],
+  "content": "closure \r\nA closure is a function that remembers and can access variables from its outer (lexical) scope even after the outer function has finished executing.\r\n\r\n1. Data privacy (encapsulation)\r\nfunction counter() {\r\n let count = 0;\r\n return function () {\r\n   count++;\r\n   return count;\r\n };\r\n}\r\n\r\nconst inc = counter();\r\ninc(); // 1\r\ninc(); // 2\r\n//count is hidden from outside.\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:41:03.276Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:41:03.276Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f559ad8593621e2957de"
+  },
+  "groupId": "Primitive types vs Reference types",
+  "keywords": [
+    "Primitive",
+    "Reference",
+    "types"
+  ],
+  "content": "Primitive types vs Reference types\r\n\r\nPrimitive types = Store actual value\r\nnumber, string, boolean, null, undefined, symbol, bigint\r\nlet a = 10;\r\nlet b = a; // copy of value\r\n\r\nReference types = Store reference (address) to data\r\nobject, array, function\r\nlet a = { x: 1 };\r\nlet b = a; // same reference\r\n\r\nBigInt. ES11\r\nNumber.MAX_SAFE_INTEGER 9007199254740991\r\nlet a = 20n;\r\nlet b = 5n;\r\nconsole.log(a + b); // 25n\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:42:33.810Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:42:33.810Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f579ad8593621e2957e1"
+  },
+  "groupId": "Pass-by-value vs Pass-by-reference",
+  "keywords": [
+    "Pass",
+    "value",
+    "reference"
+  ],
+  "content": "Pass-by-value vs Pass-by-reference\r\n\r\nPass-by-value = primitives\r\nlet a = 5;\r\nchange(a);\r\n\r\nPass-by-reference = reference\r\nlet user = { name: \"Old\" };\r\nchange(user);\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:43:05.559Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:43:05.559Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f5a5ad8593621e2957e4"
+  },
+  "groupId": "memory",
+  "keywords": [
+    "memory"
+  ],
+  "content": "handle memory allocation\r\ngarbage-collected heap system.\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:43:49.549Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:43:49.549Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f5ccad8593621e2957e7"
+  },
+  "groupId": "Truthy values Falsy values",
+  "keywords": [
+    "Truthy",
+    "Falsy",
+    "values"
+  ],
+  "content": "Truthy values\r\ntrue in Boolean convert\r\n\"hello\" 42 [] {} \"0\" \"false\" function() {} \r\n\r\nFalsy values = 8\r\nfalse 0 -0 0n  \"\" null undefined NaN\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:44:28.775Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:44:28.775Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f600ad8593621e2957ea"
+  },
+  "groupId": "double equal vs triple equal",
+  "keywords": [
+    "double",
+    "equal",
+    "triple"
+  ],
+  "content": "== VS ===\r\n== (loose equality) Compares values after type conversion\r\n=== (strict equality) Compares value AND type\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:45:20.925Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:45:20.925Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f64bad8593621e2957ed"
+  },
+  "groupId": "TYPE check",
+  "keywords": [
+    "type",
+    "check"
+  ],
+  "content": "TYPES\r\n\r\nNaN (Not-a-Number) = mathematical operation fails (JS)\r\ntypeof NaN = number\r\n\r\nnull (empty) (dev)\r\ntypeof null = object (compatibility)\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:46:35.891Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:46:35.891Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f65fad8593621e2957f0"
+  },
+  "groupId": "strict mode",
+  "keywords": [
+    "strict",
+    "mode"
+  ],
+  "content": "strict mode\r\nenables a stricter set of rules\r\n\"use strict\"; \r\n\r\n1 disable accidental global variables\r\n2 disable duplicate parameter names\r\n3 disable assigning values to read-only properties\r\n4 Throws errors for common mistakes\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:46:55.347Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:46:55.347Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f683ad8593621e2957f3"
+  },
+  "groupId": "Execution context",
+  "keywords": [
+    "Execution",
+    "context",
+    "Eval"
+  ],
+  "content": "Execution context \r\nIs a environment in which code is evaluated and executed. \r\n-----\r\n1. Global Execution Context (GEC) \r\nlet name = \"John\";\r\nfunction greet() {\r\n    console.log(\"Hello\");\r\n}\r\ngreet();\r\n-----\r\n2. Function Execution Context (FEC) \r\nfunction add(a, b) {\r\n    const sum = a + b;\r\n    return sum;\r\n}\r\nadd(2, 3);\r\n-----\r\n3. Eval Execution Context \r\neval(\"let x = 10;\");\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:47:31.161Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:47:31.161Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f69aad8593621e2957f6"
+  },
+  "groupId": "variable shadowing",
+  "keywords": [
+    "shadowing"
+  ],
+  "content": "variable shadowing\r\nsame variable name inside diffrent scope\r\n\r\nlet name = \"John\";\r\nfunction greet() {\r\n  let name = \"Alice\"; //shadows the outer variable\r\n}\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:47:54.239Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:47:54.239Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f6b7ad8593621e2957f9"
+  },
+  "groupId": "Block scope",
+  "keywords": [
+    "Block",
+    "scope"
+  ],
+  "content": "Block scope = let/ const only var not\r\ncode inside curly braces {} such as in if, for, while, or standalone blocks.\r\n\r\nlet / const\r\nif (true) {\r\n    let a = 5;\r\n}\r\nconsole.log(a); // ReferenceError\r\n-----\r\nif (true) {\r\n    var x = 10;\r\n}\r\nconsole.log(x); // 10\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:48:23.659Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:48:23.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f6d5ad8593621e2957fc"
+  },
+  "groupId": "Function Scope",
+  "keywords": [
+    "Function",
+    "Scope"
+  ],
+  "content": "Function Scope\r\nvar are accessible only inside the function where they are declared\r\n\r\nfunction greet() {\r\n    var message = \"Hello\";\r\n    console.log(message); // Hello\r\n}\r\nconsole.log(message); // Error: message is not defined\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:48:53.597Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:48:53.597Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f6f2ad8593621e2957ff"
+  },
+  "groupId": "global scope (root)",
+  "keywords": [
+    "global",
+    "scope"
+  ],
+  "content": "global scope (root)\r\noutermost scope. Variables and functions accessible from anywhere\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:49:22.746Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:49:22.746Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f705ad8593621e295802"
+  },
+  "groupId": "immutability",
+  "keywords": [
+    "immutability"
+  ],
+  "content": "immutability \r\nimmutability means Primitive types value cannot be changed after it is created\r\nlet str = \"Hello\";\r\nstr[0] = \"J\";\r\nconsole.log(str); // \"Hello\"\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:49:41.025Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:49:41.025Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f71aad8593621e295805"
+  },
+  "groupId": "polyfill",
+  "keywords": [
+    "polyfill"
+  ],
+  "content": "polyfill = A code that adds support for newer features in older browsers that don't natively support them. \r\nPromise , fetch (IE)\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:50:02.172Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:50:02.172Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f72dad8593621e295808"
+  },
+  "groupId": "Currying",
+  "keywords": [
+    "Currying"
+  ],
+  "content": "Currying\r\ntechnique where a function that takes multiple arguments is transformed into a sequence of functions \r\nOne argument at a time.\r\nfunction add(a) {\r\n  return function (b) {\r\n    return a + b;\r\n  };\r\n}\r\nconsole.log(add(2)(3)); // 5\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:50:21.161Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:50:21.161Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f740ad8593621e29580b"
+  },
+  "groupId": "Partial application",
+  "keywords": [
+    "Partial",
+    "application"
+  ],
+  "content": "Partial application\r\ntechnique where a function that takes multiple arguments is transformed into a sequence of functions \r\nFill in some arguments now, the rest later.\r\nfunction multiply(a, b) {\r\n  return a * b;\r\n}\r\nfunction partialMultiply(a) {\r\n  return function (b) {\r\n    return multiply(a, b);\r\n  };\r\n}\r\nconst double = partialMultiply(2);\r\nconsole.log(double(5)); // 10\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:50:40.759Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:50:40.759Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f760ad8593621e29580e"
+  },
+  "groupId": "Higher-order functions",
+  "keywords": [
+    "Higher",
+    "order",
+    "functions",
+    "higher"
+  ],
+  "content": "Higher-order functions\r\nTake function arguments and return function arguments\r\nfunction greet(name) {\r\n  return `Hello, ${name}!`;\r\n}\r\nfunction processUser(callback) {\r\n  return callback(\"Alice\");\r\n}\r\nconsole.log(processUser(greet));\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:51:12.246Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:51:12.246Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f777ad8593621e295811"
+  },
+  "groupId": "First-class functions",
+  "keywords": [
+    "First",
+    "class",
+    "functions"
+  ],
+  "content": "First-class functions\r\nfunctions are treated like any other value.\r\n1 Assigned to variables\r\n2 Passed as arguments to other functions\r\n3 Returned from other functions\r\n4 Stored in arrays or objects\r\nconst numbers = [1, 2, 3, 4];\r\nconst squares = numbers.map(function(num) {\r\n  return num * num;\r\n});\r\nconsole.log(squares); // [1, 4, 9, 16]\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:51:35.922Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:51:35.922Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f798ad8593621e295814"
+  },
+  "groupId": "Pure Function vs Impure Function",
+  "keywords": [
+    "Pure",
+    "Function",
+    "Impure"
+  ],
+  "content": "Pure Function vs Impure Function\r\n\r\nPure Function\r\n1 Always returns the same result for the same arguments. \r\n2 not modify external variables\r\nfunction add(a, b) {\r\n  return a + b;\r\n}\r\n-----\r\nImpure Function\r\nfunction getCurrentTime() {\r\n  return Date.now();\r\n}\r\n\r\nlet count = 0;\r\nfunction increment() {\r\n  count++;\r\n}\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:52:08.046Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:52:08.046Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f7b6ad8593621e295817"
+  },
+  "groupId": "Function composition",
+  "keywords": [
+    "Function",
+    "composition"
+  ],
+  "content": "Function composition\r\ncombining two or more functions into a new function \r\nconst double = x => x * 2;\r\nconst addOne = x => x + 1;\r\nconst composed = x => double(addOne(x));\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:52:38.543Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:52:38.543Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f7cdad8593621e29581a"
+  },
+  "groupId": "Function declaration vs Function expression",
+  "keywords": [
+    "Function",
+    "declaration",
+    "expression"
+  ],
+  "content": "Function declaration vs Function expression\r\n\r\nFunction declaration = function keyword\r\nhello(); // Works\r\nfunction hello() {\r\n  console.log(\"Hello\");\r\n}\r\n-----\r\nFunction expression = const / let\r\nhello(); // ReferenceError\r\nconst hello = function () {\r\n  console.log(\"Hello\");\r\n};\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:53:01.897Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:53:01.897Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f7efad8593621e29581d"
+  },
+  "groupId": "Arrow functions vs Regular functions.",
+  "keywords": [
+    "Arrow",
+    "Regular",
+    "functions"
+  ],
+  "content": "Arrow functions / Regular functions.\r\n\r\nRegular Function  \r\n1. Regular function as a constructor \r\n2. It have own THIS\r\n3. Object methods, constructors, event handlers\r\n\r\nfunction Person() {\r\n  this.name = \"John\";\r\n  this.greet = () => {\r\n    console.log(this.name);\r\n  };\r\n}\r\nlet personx = new Person();\r\npersonx.greet(); // John\r\n-----\r\nArrow functions\r\n1. No constructor \r\n2. No This\r\n3. Callbacks, array methods, closures\r\n\r\nconst person = {\r\n  name: \"John\",\r\n  greet() {\r\n    console.log(this.name);\r\n  }\r\n};\r\nperson.greet(); // John\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:53:35.499Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:53:35.499Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f80ead8593621e295820"
+  },
+  "groupId": "call() / apply() / bind() / JavaScript method that",
+  "keywords": [
+    "call",
+    "apply",
+    "bind"
+  ],
+  "content": "call() / apply() / bind() / JavaScript method that\r\n\r\ncall() = invokes a function immediately with a specified this value and arguments passed individually. \r\nconst person = {\r\n    name: \"Alice\"\r\n};\r\nfunction greet(city, country) {\r\n    console.log(`Hello, I'm ${this.name} from ${city}, ${country}`);\r\n}\r\ngreet.call(person, \"London\", \"UK\");\r\n-----\r\napply() = invokes a function immediately with a specified this value and arguments passed in array\r\ngreet.apply(person, [\"Paris\", \"France\"]);\r\n-----\r\nbind() = not execute immediately it returns a new function with the specified this value. \r\nconst person = {\r\n    name: \"Charlie\"\r\n};\r\nfunction greet(city) {\r\n    console.log(`Hello, I'm ${this.name} from ${city}`);\r\n}\r\nconst greetCharlie = greet.bind(person);\r\ngreetCharlie(\"New York\");\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:54:06.724Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:54:06.724Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f835ad8593621e295823"
+  },
+  "groupId": "Recursion vs  Tail recursion vs Non Trail",
+  "keywords": [
+    "Recursion",
+    "Tail",
+    "Non Trail"
+  ],
+  "content": "Recursion vs  Tail recursion vs Non Trail\r\nRecursion = function calls itself to solve a problem by breaking it into smaller subproblems. \r\nfunction countSteps(step) {\r\n  if (step === 0) {\r\n    console.log(\"Reached the ground.\");\r\n    return;\r\n  }\r\n  countSteps(step - 1);\r\n}\r\ncountSteps(5);\r\n-----\r\nTail recursion = Recursive call is the last operation\r\nfunction totalMoney(bills, index = 0, total = 0) {\r\n  if (index === bills.length) {\r\n    return total;\r\n  }\r\n  return totalMoney(bills, index + 1, total + bills[index]);\r\n}\r\nconst bills = [100, 200, 50, 500];\r\nconsole.log(totalMoney(bills)); // 850\r\n-----\r\nNon Trail\r\nfunction totalMoney(bills, index = 0) {\r\n  if (index === bills.length) {\r\n    return 0;\r\n  }\r\n  return bills[index] + totalMoney(bills, index + 1);\r\n}\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:54:45.460Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:54:45.460Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f85dad8593621e295826"
+  },
+  "groupId": "Rest parameter vs Default parameter",
+  "keywords": [
+    "Rest",
+    "parameter",
+    "Default"
+  ],
+  "content": "Rest parameter vs Default parameter\r\n\r\nRest parameter = indefinite number of arguments as array / Spread syntax ...\r\nfunction functionName(...args) {\r\n    // args is an array\r\n}\r\n-----\r\nDefault parameter = Default value is provided\r\nfunction greet(name = \"Guest\") {\r\n    console.log(\"Hello, \" + name);\r\n}\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:55:25.622Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:55:25.622Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f875ad8593621e295829"
+  },
+  "groupId": "Template literals.",
+  "keywords": [
+    "Template",
+    "literals"
+  ],
+  "content": "Template literals.\r\nbackticks ` `\r\nlet name = \"Alice\";\r\nlet age = 25;\r\nconsole.log(`My name is ${name} and I am ${age} years old.`);\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:55:49.206Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:55:49.206Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f888ad8593621e29582c"
+  },
+  "groupId": "Destructuring assignment",
+  "keywords": [
+    "Destructuring",
+    "assignment"
+  ],
+  "content": "Destructuring assignment.\r\nconst numbers = [10, 20, 30];\r\nconst [a, b, c] = numbers;\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:56:08.490Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:56:08.490Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f898ad8593621e29582f"
+  },
+  "groupId": "Spread operator",
+  "keywords": [
+    "Spread",
+    "operator"
+  ],
+  "content": "Spread operator\r\n( … ) expand an iterable\r\nconst arr1 = [1, 2, 3];\r\nconst arr2 = [...arr1];\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:56:24.210Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:56:24.210Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f8afad8593621e295832"
+  },
+  "groupId": "Rest Operator (...)",
+  "keywords": [
+    "Rest",
+    "Operator"
+  ],
+  "content": "Rest Operator (...) \r\nfunction sum(...numbers) {\r\n  return numbers.reduce((total, num) => total + num, 0);\r\n}\r\n-----\r\nconst [first, second, ...remaining] = fruits;\r\n-----\r\nconst { name, ...details } = student;\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:56:47.224Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:56:47.224Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f8cbad8593621e295835"
+  },
+  "groupId": "Optional chaining - ES11",
+  "keywords": [
+    "Optional",
+    "chaining"
+  ],
+  "content": "Optional chaining - ES11\r\naccess nested object properties or call methods without throwing an error if an intermediate value is null or undefined. \r\nconst user = {};\r\nconst city = user.address?.city ?? \"Unknown\";\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:57:15.931Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:57:15.931Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f8fbad8593621e295838"
+  },
+  "groupId": "Nullish coalescing",
+  "keywords": [
+    "Nullish",
+    "coalescing"
+  ],
+  "content": "Nullish coalescing (??)  ES11\r\nreturns the right-hand value only if the left-hand value is null or undefined.\r\nlet name = null;\r\nconsole.log(name ?? \"Guest\"); // Guest\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:58:03.387Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:58:03.387Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f90dad8593621e29583b"
+  },
+  "groupId": "Symbol",
+  "keywords": [
+    "Symbol"
+  ],
+  "content": "Symbol is a unique and immutable primitive value used as an object property key\r\nconst id = Symbol(\"id\");\r\nconst user = {\r\n    name: \"John\",\r\n    [id]: 101\r\n};\r\nconsole.log(id);       // null\r\nconsole.log(user[id]);       // 101\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:58:21.823Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:58:21.823Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f921ad8593621e29583e"
+  },
+  "groupId": "Iterator",
+  "keywords": [
+    "Iterator"
+  ],
+  "content": "Iterator is an object that allows sequential access to elements of a collection.  by next() \r\nlet str = \"abc\";\r\nlet it = str[Symbol.iterator]();\r\nconsole.log(it.next()); //{value: \"a\", done: false}\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:58:41.389Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:58:41.389Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f93aad8593621e295841"
+  },
+  "groupId": "Generator",
+  "keywords": [
+    "Generator"
+  ],
+  "content": "Generator is a special function that can pause and resume execution. \r\nfunction* + yield\r\nfunction* numbers() {\r\n    yield 1;\r\n    yield 2;\r\n    yield 3;\r\n}\r\nconst gen = numbers();\r\nconsole.log(gen.next());// { value: 1, done: false }\r\nconsole.log(gen.next());\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:59:06.331Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:59:06.331Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f94bad8593621e295844"
+  },
+  "groupId": "Map()",
+  "keywords": [
+    "Map"
+  ],
+  "content": "Map()\r\nstores key-value pairs where keys can be of any type. \r\nset(), get(), has(), delete(), clear()\r\n\r\nconst map = new Map();\r\nmap.set(\"name\", \"John\");\r\nconsole.log(map.get(\"name\")); //John\r\nmap.delete(\"age\");\r\nfor (let [key, value] of map) {\r\n  console.log(key, value);\r\n}\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:59:23.672Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:59:23.672Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f95ead8593621e295847"
+  },
+  "groupId": "Set()",
+  "keywords": [
+    "Set"
+  ],
+  "content": "Set()\r\nstores unique values only.\r\nconst numbers = new Set();\r\nnumbers.add(10);\r\nfor (let value of numbers) {\r\n    console.log(value);\r\n}\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:59:42.047Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T06:59:42.047Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f96cad8593621e29584a"
+  },
+  "groupId": "WeakMap()",
+  "keywords": [
+    "WeakMap",
+    "Weak",
+    "Map"
+  ],
+  "content": "WeakMap()\r\n1 Keys must be objects. \r\n2 not iterable. \r\n3 no size property \r\n\r\nlet user = {\r\n    name: \"John\"\r\n};\r\nconst weakMap = new WeakMap();\r\nweakMap.set(user, \"Admin\");\r\n",
+  "ct": "",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T06:59:56.915Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:00:32.521Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f987ad8593621e29584d"
+  },
+  "groupId": "WeakSet()",
+  "keywords": [
+    "WeakSet",
+    "Weak",
+    "Set"
+  ],
+  "content": "WeakSet()\r\n1 store only objects \r\n2 not iterable. \r\n3 no size property \r\n\r\nlet obj = {\r\n    id: 1\r\n};\r\nconst weakSet = new WeakSet();\r\nweakSet.add(obj);\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:00:23.853Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:00:23.853Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f9a8ad8593621e295853"
+  },
+  "groupId": "Dynamic imports",
+  "keywords": [
+    "Dynamic",
+    "imports"
+  ],
+  "content": "Dynamic imports\r\nload a module at runtime \r\n\r\nimport('./module.js')\r\n.then(module => {\r\n    module.myFunction();\r\n})\r\n.catch(error => {\r\n    console.error(error);\r\n});\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:00:56.529Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:00:56.529Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f9c7ad8593621e295856"
+  },
+  "groupId": "ES modules",
+  "keywords": [
+    "ES",
+    "modules",
+    "ES6"
+  ],
+  "content": "ES modules\r\nmodule system let you split code into multiple files and share variables, functions, and classes using export and import. \r\n\r\n1 import / export\r\n2 Tree Shaking\r\n3 Asynchronous loading\r\n\r\nexport const PI = 3.14;\r\n\r\nexport function add(a, b) {\r\n  return a + b;\r\n}\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:01:27.844Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:01:27.844Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f9e4ad8593621e295859"
+  },
+  "groupId": "CommonJS (CJS)",
+  "keywords": [
+    "Common",
+    "JS",
+    "CJS"
+  ],
+  "content": "CommonJS (CJS)\r\n1 require() / module.exports\r\n2 Synchronous Loading\r\n\r\nfunction add(a, b) {\r\n  return a + b;\r\n}\r\nmodule.exports = add;\r\n----------------------------------------\r\n// app.js\r\nconst add = require('./math');\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:01:56.828Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:01:56.828Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1f9fbad8593621e29585c"
+  },
+  "groupId": "Tree Shaking (ES6)",
+  "keywords": [
+    "Tree",
+    "Shaking"
+  ],
+  "content": "Tree Shaking (ES6) \r\nis a build optimization technique that removes unused (dead) code from the final JavaScript bundle.\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:02:19.409Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:02:19.409Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fa0fad8593621e29585f"
+  },
+  "groupId": "Top-level await",
+  "keywords": [
+    "Top",
+    "level",
+    "await"
+  ],
+  "content": "Top-level await.\r\nCall await on root not inside async function\r\nconst response = await fetch(\"https://api.example.com/users\");\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:02:39.065Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:02:39.065Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fa26ad8593621e295862"
+  },
+  "groupId": "Optional catch binding (ES2019)",
+  "keywords": [
+    "Optional",
+    "catch",
+    "binding"
+  ],
+  "content": "Optional catch binding (ES2019) \r\ncatch does not have error argument\r\ntry {\r\n} catch {\r\n  console.log(\"An error occurred.\");\r\n}\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:03:02.673Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:03:02.673Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fa44ad8593621e295865"
+  },
+  "groupId": "Numeric separators",
+  "keywords": [
+    "Numeric",
+    "separators"
+  ],
+  "content": "Numeric separators\r\nAlllow format number by underscore ( _ )\r\nconst creditCard = 1234_5678_9012_3456;\r\nconsole.log(creditCard); // 1234567890123456\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:03:32.497Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:03:32.497Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fa69ad8593621e295868"
+  },
+  "groupId": "Promise.finally",
+  "keywords": [
+    "Promise",
+    "finally"
+  ],
+  "content": "Promise.finally (ES9)\r\nAfter a Promise settles \r\nUse = cleanup / loading animation\r\n\r\nfetchData()\r\n  .then(data => {\r\n    console.log(\"Success:\", data);\r\n  })\r\n  .catch(err => {\r\n    console.log(\"Error:\", err);\r\n  })\r\n  .finally(() => {\r\n    console.log(\"Operation completed.\");\r\n  });\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:04:09.630Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:04:09.630Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fa78ad8593621e29586b"
+  },
+  "groupId": "Asynchronous programming",
+  "keywords": [
+    "Asynchronous",
+    "programming"
+  ],
+  "content": "Asynchronous programming\r\na way to perform tasks without blocking the execution of other code.\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:04:24.971Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:04:24.971Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fa85ad8593621e29586e"
+  },
+  "groupId": "Callbacks",
+  "keywords": [
+    "Callbacks"
+  ],
+  "content": "Callbacks\r\ncallback is a function that is passed as an argument to another function and is executed later, \r\nfunction greet(name, callback) {\r\n    callback();\r\n}\r\nfunction sayBye() {\r\n    console.log(\"Goodbye!\");\r\n}\r\ngreet(\"Alice\", sayBye);\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:04:37.420Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:04:37.420Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fa9aad8593621e295871"
+  },
+  "groupId": "Callback Hell / Pyramid of Doom",
+  "keywords": [
+    "Callback",
+    "Hell",
+    "Pyramid",
+    "Doom"
+  ],
+  "content": "Callback Hell / Pyramid of Doom\r\n\r\nloginUser(function(user) {\r\n    getProfile(user, function(profile) {\r\n        getOrders(profile, function(orders) {\r\n            console.log(orders);\r\n        });\r\n    });\r\n});\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:04:58.322Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:04:58.322Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fac7ad8593621e295874"
+  },
+  "groupId": "Promise",
+  "keywords": [
+    "Promise",
+    "all",
+    "allSettled",
+    "any.race"
+  ],
+  "content": "Promise \r\nasynchronous operation eventual completion or failure\r\n\r\nStates of a Promise\r\nPending – Initial state, neither fulfilled nor rejected.\r\nFulfilled – Operation completed successfully.\r\nRejected – Operation failed.\r\n\r\n\r\nPromise chaining \r\na way to execute asynchronous operations one after another using .then(), .catch(), and .finally().\r\n\r\nPromise.all        = any reject    / all resolve\r\nPromise.allSettled = never reject  / all settle\r\nPromise.race       = first settle (resolve or reject)\r\nPromise.any        = all reject    / first resolve\r\n\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:05:43.199Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:05:43.199Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fadcad8593621e295877"
+  },
+  "groupId": "Async/await",
+  "keywords": [
+    "Async",
+    "await"
+  ],
+  "content": "Async/await.\r\n\r\nasync function =  returns Promise. \r\nawait = pauses the execution of an async function until a Promise settles\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:06:04.490Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:06:04.490Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fb06ad8593621e29587a"
+  },
+  "groupId": "Sequential vs Parallel execution",
+  "keywords": [
+    "Sequential",
+    "Parallel",
+    "execution"
+  ],
+  "content": "Sequential vs Parallel execution\r\n\r\nSequential = one after another \r\nconst user = await getUser();\r\nconst orders = await getOrders(user.id);\r\n---\r\nParallel = multiple asynchronous tasks are started together and can make progress simultaneously \r\nconst [users, products, orders] = await Promise.all([\r\n  fetchUsers(),\r\n  fetchProducts(),\r\n  fetchOrders()\r\n]);\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:06:46.256Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:06:46.256Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fb18ad8593621e29587d"
+  },
+  "groupId": "AbortController",
+  "keywords": [
+    "Abort",
+    "Controller"
+  ],
+  "content": "AbortController\r\nlets you cancel asynchronous operations, \r\nmost commonly fetch() requests.\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:07:04.784Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:07:04.784Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fb34ad8593621e295880"
+  },
+  "groupId": "Event Emitter",
+  "keywords": [
+    "Event",
+    "Emitter",
+    "pub",
+    "sub"
+  ],
+  "content": "Event Emitter \r\na pattern (and a built-in class in Node.js) that allows objects to emit named events and other parts of your code to listen and react to them.\r\npublish-subscribe (pub/sub) pattern. \r\n\r\nconst EventEmitter = require(\"events\");\r\nconst emitter = new EventEmitter();\r\nemitter.on(\"message\", (text) => {\r\n  console.log(\"Received:\", text);\r\n});\r\nemitter.emit(\"message\", \"Hello World\");\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:07:32.238Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:07:32.238Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fb72ad8593621e295883"
+  },
+  "groupId": "Event Loop",
+  "keywords": [
+    "Event",
+    "Loop"
+  ],
+  "content": "Event Loop\r\nThe Event Loop is the mechanism process that manages the execution of synchronous and asynchronous code in JavaScript by coordinating the Call Stack and task queues, allowing JavaScript to handle multiple operations without blocking the main thread.\r\n\r\nLIFO (Last In, First Out) \r\n\r\nEventloop = manager\r\nCall stack = Executor\r\ntask queue = functions queue that are waiting to run after the call stack is empty\r\n\r\n-----\r\nLIFO (Last In, First Out) \r\n\r\nEventloop = manager\r\nCall stack = Executor\r\ntask queue = functions queue that are waiting to run after the call stack is empty \r\n\r\nMicrotasks = high-priority tasks \r\nPromise.then / catch / finally\r\nqueueMicrotask()\r\nMutationObserver\r\n\r\nMacro tasks = low priority\r\nsetTimeout\r\nsetInterval\r\nsetImmediate (Node.js)\r\nUI events (click, input, etc.)\r\nI/O callbacks\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:08:34.377Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:08:34.377Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fb81ad8593621e295886"
+  },
+  "groupId": "Pooling",
+  "keywords": [
+    "Pooling"
+  ],
+  "content": "Pooling\r\nreuse objects instead of constantly creating\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:08:49.604Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:08:49.604Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fb91ad8593621e295889"
+  },
+  "groupId": "Code splitting",
+  "keywords": [
+    "Code",
+    "splitting"
+  ],
+  "content": "Code splitting\r\nbreaking your JavaScript bundle into smaller chunks instead of shipping one big file\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:09:05.851Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:09:05.851Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fba4ad8593621e29588c"
+  },
+  "groupId": "Web Workers",
+  "keywords": [
+    "Web",
+    "Workers"
+  ],
+  "content": "Web Workers\r\nWeb Workers let you run JavaScript in a background thread, separate from the main UI thread. \r\n\r\nSharedArrayBuffer = special memory buffer (main thread + workers)\r\n\r\nonmessage = function(e) {\r\n  const result = heavyComputation(e.data);\r\n  postMessage(result);\r\n};\r\n\r\nconst worker = new Worker(\"worker.js\");\r\nworker.postMessage(data);\r\nworker.onmessage = (e) => {\r\n  console.log(\"Result:\", e.data);\r\n};\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:09:24.232Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:09:24.232Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fbb4ad8593621e29588f"
+  },
+  "groupId": "Exponential backoff",
+  "keywords": [
+    "Exponential",
+    "backoff"
+  ],
+  "content": "Exponential backoff\r\nretry strategy where the wait time doubles after each failed attempt. \r\ndelay = initialDelay * (2 ^ retryCount)\r\nuse\r\n1 API requests (HTTP 429, 503)\r\n2 Database connections\r\n3 Network calls\r\n4 Message queues\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:09:40.935Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:09:40.935Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fbd3ad8593621e295892"
+  },
+  "groupId": "Asynchronous iterables",
+  "keywords": [
+    "Asynchronous",
+    "iterables"
+  ],
+  "content": "Asynchronous iterables\r\nreturn Promises instead of immediate values.\r\n\r\nconst stream = fs.createReadStream(\"file.txt\", { encoding: \"utf8\" });\r\nfor await (const chunk of stream) {\r\nconsole.log(chunk);\r\n}\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:10:11.147Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:10:11.147Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fc76ad8593621e295895"
+  },
+  "groupId": "array methods",
+  "keywords": [
+    "array",
+    "methods",
+    "push",
+    "unshift",
+    "pop",
+    "shift",
+    "splice",
+    "toSpliced",
+    "concat",
+    "slice",
+    "fill",
+    "copyWithin",
+    "includes",
+    "indexOf",
+    "lastIndexOf",
+    "find",
+    "findLast",
+    "findIndex",
+    "findLastIndex",
+    "forEach",
+    "map",
+    "filter",
+    "reduce",
+    "reduceRight",
+    "some",
+    "every"
+  ],
+  "content": "push() = add element last\r\nunshift() = add element first\r\n\r\npop() = remove last element and return element\r\nshift() = remove first element and return element\r\n\r\nsplice(startIndex, deleteCount, item1, item2, ...)\r\ntoSpliced() create new array\r\nconcat() = combine\r\nslice(startIndex, endIndex) = subarray\r\nfill(value, startIndexIn, endIndexEx) = replace elements in an array with a specified value\r\ncopyWithin(target, startIndex, endIndex)\r\n\r\n\r\nincludes()\r\nindexOf()\r\nlastIndexOf()\r\nfind()\r\nfindLast()\r\nfindIndex()\r\nfindLastIndex()\r\n\r\n\r\nforEach()\r\nmap()\r\nfilter()\r\nreduce() = combine all elements of an array into a single value\r\nreduceRight() right -> left\r\n\r\nlet initialValue = 0\r\nconst total = [1, 2, 3].reduce((accumulator, currentValue) => {\r\n    return accumulator + currentValue;\r\n}, initialValue);\r\nconsole.log(total) //6\r\n\r\n\r\nsome() = anyone\r\nevery() = all\r\nmarks.some(mark => mark >= 35);\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:12:54.804Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:12:54.804Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fc89ad8593621e295898"
+  },
+  "groupId": "Rendering blocking",
+  "keywords": [
+    "Rendering",
+    "blocking"
+  ],
+  "content": "Rendering blocking\r\nRender-blocking  refers to resources that prevent a web page from being displayed quickly \r\n1. defer (recommended)  = Downloads while HTML parses \r\n<script src=\"app.js\" defer></script> \r\n2. async  = Downloads in parallel \r\n<script src=\"app.js\" async></script>\r\n3. Move scripts to bottom \r\n4. Code splitting / lazy loading (advanced) \r\nimport('./module.js')\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:13:13.639Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:13:13.639Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fc9bad8593621e29589b"
+  },
+  "groupId": "Critical Rendering Path",
+  "keywords": [
+    "Critical",
+    "Rendering"
+  ],
+  "content": "Critical Rendering Path\r\nHTML, CSS, and JavaScript into pixels on your screen\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:13:31.563Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:13:31.563Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fcb4ad8593621e29589e"
+  },
+  "groupId": "Layout thrashing (Reflow ) / Repaint",
+  "keywords": [
+    "Layout",
+    "thrashing",
+    "Reflow",
+    "Repaint"
+  ],
+  "content": "Layout thrashing (Reflow ) / Repaint \r\n\r\nReflow (Layout thrashing) = geometry changes (layout)\r\nRepaint = visual changes only (no layout change)\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:13:56.434Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:13:56.434Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fcc4ad8593621e2958a1"
+  },
+  "groupId": "Event Delegation",
+  "keywords": [
+    "Event",
+    "Delegation"
+  ],
+  "content": "Event Delegation\r\nevent listener to parent element\r\n<ul id=\"list\">\r\n  <li>Apple</li>\r\n  <li>Banana</li>\r\n</ul>\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:14:12.122Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:14:12.122Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fcd7ad8593621e2958a4"
+  },
+  "groupId": "Capturing vs Bubbling",
+  "keywords": [
+    "Capturing",
+    "Bubbling"
+  ],
+  "content": "Capturing vs Bubbling\r\n\r\nCapturing \r\nelement.addEventListener(\"click\", handler, true);\r\nEvent moves = Top DOM -> target element\r\n---\r\nBubbling\r\nelement.addEventListener(\"click\", handler); // default is bubbling \r\nEvent moves = target element -> Top DOM\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:14:31.503Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:14:31.503Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fcebad8593621e2958a7"
+  },
+  "groupId": "IntersectionObserver",
+  "keywords": [
+    "Intersection",
+    "Observer"
+  ],
+  "content": "IntersectionObserver\r\nviewport activity\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:14:51.429Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:14:51.429Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fcfead8593621e2958aa"
+  },
+  "groupId": "Passive event listeners",
+  "keywords": [
+    "Passive",
+    "event",
+    "listeners"
+  ],
+  "content": "Passive event listeners \r\ntouchstart, touchmove, and wheel\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:15:10.218Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:15:10.218Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fd1aad8593621e2958ad"
+  },
+  "groupId": "Memory leaks",
+  "keywords": [
+    "Memory",
+    "leaks"
+  ],
+  "content": "Memory leaks\r\nRam consuption\r\n1. Accidental global variables \r\n2. Unremoved event listeners \r\n3. Closures holding large objects \r\n4. Caches with no eviction policy \r\n5. Timers not cleared \r\n7. Large buffers / streams held in memory \r\n8 Promises / async queues that never resolve\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:15:38.735Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:15:38.735Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fd29ad8593621e2958b0"
+  },
+  "groupId": "Prototype",
+  "keywords": [
+    "Prototype"
+  ],
+  "content": "Prototype\r\nEvery constructor function has a prototype object.\r\nfunction Person(name) {\r\n  this.name = name;\r\n}\r\nPerson.prototype.sayHello = function () {\r\n  console.log(`Hi, I'm ${this.name}`);\r\n};\r\nconst user = new Person(\"Alex\");\r\nuser.sayHello(); // Hi, I'm Alex\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:15:53.143Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:15:53.143Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fd3ead8593621e2958b3"
+  },
+  "groupId": "__proto__",
+  "keywords": [
+    "proto"
+  ],
+  "content": "__proto__ \r\nproperty of Object internal link = that refers to an object's prototype. It is part of JavaScript's prototype inheritance mechanism.\r\n\r\nfunction Person(name) {\r\n  this.name = name;\r\n}\r\nconst p1 = new Person(\"Amit\");\r\nconsole.log(p1.__proto__ === Person.prototype); // true\r\n\r\nprototype = “What I give to my children”\r\nproto = “Who my parent is”\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:16:14.608Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:16:14.608Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fd62ad8593621e2958b6"
+  },
+  "groupId": "ES6 classes",
+  "keywords": [
+    "classes",
+    "class",
+    "oops"
+  ],
+  "content": "ES6 classes\r\n1 look like traditional OOP classes\r\n2 JavaScript’s prototype-based inheritance system.\r\nStrict mode\r\nInheritance = extends and super\r\n\r\nclass Person {\r\n  constructor(name) {\r\n    this.name = name;\r\n  }\r\n  greet() {\r\n    console.log(\"Hello \" + this.name);\r\n  }\r\n}\r\n---\r\nfunction Person(name) {\r\n  this.name = name;\r\n}\r\nPerson.prototype.greet = function () {\r\n  console.log(\"Hello \" + this.name);\r\n};\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:16:50.887Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:16:50.887Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fd76ad8593621e2958b9"
+  },
+  "groupId": "(#class) Method overriding",
+  "keywords": [
+    "Method",
+    "overriding"
+  ],
+  "content": "(#class) Method overriding \r\nMethod overriding happens when a child class provides its own implementation of a method that already exists in its parent class. \r\n\r\nclass Animal {\r\n  speak() {\r\n    console.log(\"Animal makes a sound\");\r\n  }\r\n}\r\n\r\nclass Dog extends Animal {\r\n  speak() {\r\n    super.speak(); // call parent method\r\n    console.log(\"Dog barks\");\r\n  }\r\n}\r\n\r\nconst d = new Dog();\r\nd.speak();\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:17:10.154Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:17:10.154Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fd8ead8593621e2958bc"
+  },
+  "groupId": "(#class) Method borrowing",
+  "keywords": [
+    "Method",
+    "borrowing"
+  ],
+  "content": "(#class) Method borrowing\r\nusing a method from one class on an instance of another class, without copying the method.\r\ncall() / apply()\r\n\r\nclass Person {\r\n  constructor(name) {\r\n    this.name = name;\r\n  }\r\n  greet() {\r\n    return `Hello, I'm ${this.name}`;\r\n  }\r\n}\r\n\r\nclass Animal {\r\n  constructor(name) {\r\n    this.name = name;\r\n  }\r\n}\r\n\r\nconst p = new Person(\"Asha\");\r\nconst a = new Animal(\"Doggo\");\r\n\r\nconsole.log(p.greet.call(a)); // Borrow greet() from Person and use it for Animal\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:17:34.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:17:34.225Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fda4ad8593621e2958bf"
+  },
+  "groupId": "Own properties vs Inherited properties",
+  "keywords": [
+    "Own",
+    "Inherited",
+    "properties"
+  ],
+  "content": "Own vs Inherited properties\r\n\r\nconst animal = {\r\n  eats: true\r\n};\r\nconst dog = Object.create(animal);\r\ndog.name = \"Buddy\";\r\nconsole.log(dog.hasOwnProperty(\"name\")); // true\r\nconsole.log(dog.hasOwnProperty(\"eats\")); // false\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:17:56.542Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:17:56.542Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fdb6ad8593621e2958c2"
+  },
+  "groupId": "instanceof",
+  "keywords": [
+    "instanceof",
+    "operator"
+  ],
+  "content": "instanceof\r\ninstanceof operator in JavaScript checks whether an object is an instance of a particular constructor or class by looking at its prototype chain. \r\nclass Person {}\r\nconst p = new Person();\r\nconsole.log(p instanceof Person); // true\r\nconsole.log(p instanceof Object); // true\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:18:14.261Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:18:14.261Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fdcdad8593621e2958c5"
+  },
+  "groupId": "Constructor function",
+  "keywords": [
+    "Constructor",
+    "function"
+  ],
+  "content": "Constructor function\r\nregular function used with the new keyword. \r\nHoisting \r\nInheritance  = Manual prototype chaining\r\n\r\nfunction Person(name, age) {\r\n  this.name = name;\r\n  this.age = age;\r\n}\r\n\r\nPerson.prototype.greet = function() {\r\n  console.log(`Hello, I'm ${this.name}`);\r\n};\r\nconst john = new Person(\"John\", 25);\r\njohn.greet();\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:18:37.658Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:18:37.658Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fdeead8593621e2958c8"
+  },
+  "groupId": "Object.create()",
+  "keywords": [
+    "Object",
+    "create"
+  ],
+  "content": "Object.create() \r\ncreates a new object using another object as its prototype. It's commonly used for inheritance without using classes. \r\nconst person = {\r\n  greet() {\r\n    console.log(\"Hello!\");\r\n  }\r\n};\r\nconst john = Object.create(person);\r\njohn.greet(); // Hello!\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:19:10.315Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:19:10.315Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fe08ad8593621e2958cb"
+  },
+  "groupId": "Private class fields (ES11)",
+  "keywords": [
+    "Private",
+    "class",
+    "fields"
+  ],
+  "content": "Private class fields (ES11)\r\nclass properties that cannot be accessed or modified outside the class\r\nclass Person {\r\n  #name; // private field\r\n  constructor(name) {\r\n    this.#name = name;\r\n  }\r\n  getName() {\r\n    return this.#name;\r\n  }\r\n}\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:19:36.313Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:19:36.313Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fe20ad8593621e2958ce"
+  },
+  "groupId": "Prototype chain",
+  "keywords": [
+    "Prototype",
+    "chain"
+  ],
+  "content": "Prototype chain\r\nmechanism that allows objects to inherit properties and methods from other objects. \r\n\r\nconst animal = {\r\n  eats: true,\r\n  walk() {\r\n    console.log(\"Animal walks\");\r\n  }\r\n};\r\nconst dog = {\r\n  barks: true\r\n};\r\ndog.__proto__ = animal; // sets prototype\r\nconsole.log(dog.barks); // true (own property)\r\nconsole.log(dog.eats);  // true (from prototype: animal)\r\ndog.walk();             // \"Animal walks\"\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:20:00.087Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:20:00.087Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fe38ad8593621e2958d1"
+  },
+  "groupId": "info",
+  "keywords": [
+    "Static"
+  ],
+  "content": "Rapid \r\nCan classes exist without prototypes?\r\nNo\r\n-----\r\nStatic methods\r\ncan be called without creating an object\r\n\r\n-----\r\nobjects stored internally\r\nobjects are stored as collections of key-value pairs, \r\n, V8 in Chrome/Node.js, SpiderMonkey in Firefox\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:20:24.983Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:20:24.983Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fe47ad8593621e2958d4"
+  },
+  "groupId": "Object literals",
+  "keywords": [
+    "Object",
+    "literals"
+  ],
+  "content": "Object literals\r\ncurly braces {} with key-value pairs\r\nperson.name = dot notation \r\nperson[\"age\"] = bracket notation\r\n\r\nconst person = {\r\n  name: \"Alice\",\r\n  age: 25,\r\n  isStudent: false\r\n};\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:20:39.423Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:20:39.423Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fe58ad8593621e2958d7"
+  },
+  "groupId": "Computed property names",
+  "keywords": [
+    "Computed",
+    "property",
+    "names"
+  ],
+  "content": "Computed property names\r\nconst key = \"name\";\r\nconst person = {\r\n  [key]: \"Alice\"\r\n};\r\nconsole.log(person); // { name: \"Alice\" }\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:20:56.127Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:20:56.127Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fe71ad8593621e2958da"
+  },
+  "groupId": "Getters and setters",
+  "keywords": [
+    "Getters",
+    "setters"
+  ],
+  "content": "(#class) Getters and setters\r\nGetters = read a property. \r\nSetters = assign a value to a property.\r\n\r\nclass Person {\r\n  constructor(firstName, lastName) {\r\n    this.firstName = firstName;\r\n    this.lastName = lastName;\r\n  }\r\n\r\n  get fullName() {\r\n    return `${this.firstName} ${this.lastName}`;\r\n  }\r\n\r\n  set fullName(value) {\r\n    const parts = value.split(\" \");\r\n    this.firstName = parts[0];\r\n    this.lastName = parts[1];\r\n  }\r\n}\r\n\r\nconst person = new Person(\"John\", \"Doe\");\r\nconsole.log(person.fullName); // Getter Use\r\nperson.fullName = \"Jane Smith\"; // Setters Use\r\nconsole.log(person.firstName); // Jane\r\nconsole.log(person.lastName);  // Smith\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:21:21.703Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:21:33.416Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1febdad8593621e2958e0"
+  },
+  "groupId": "Property descriptors",
+  "keywords": [
+    "Property",
+    "descriptors"
+  ],
+  "content": "Property descriptors\r\ncharacteristics (attributes) of an object's property\r\n\r\nObject.getOwnPropertyDescriptor()\r\nObject.defineProperty()\r\nObject.defineProperties()\r\n\r\nconst person = {};\r\nObject.defineProperty(person, \"name\", {\r\n  value: \"Alice\",\r\n  writable: false,\r\n  enumerable: true, // looping \r\n  configurable: false\r\n});\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:22:37.942Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:22:37.942Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fee9ad8593621e2958e3"
+  },
+  "groupId": "Object freeze seal preventExtensions",
+  "keywords": [
+    "Object",
+    "freeze",
+    "seal",
+    "preventExtensions"
+  ],
+  "content": "Object.freeze = no add/delete\r\nObject.seal = immutable\r\nObject.preventExtensions = No Add\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:23:21.222Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:23:21.222Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fef8ad8593621e2958e6"
+  },
+  "groupId": "Garbage collection",
+  "keywords": [
+    "Garbage",
+    "collection"
+  ],
+  "content": "Garbage collection\r\ngarbage collection (GC) is how the engine automatically frees memory that your program no longer uses. \r\nIf something is not reachable from any root, it is considered garbage and can be removed\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:23:36.756Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:23:36.756Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1ff0aad8593621e2958e9"
+  },
+  "groupId": "Detached DOM nodes",
+  "keywords": [
+    "Detached",
+    "DOM",
+    "nodes"
+  ],
+  "content": "Detached DOM nodes\r\njs = exists\r\ndocument = not exists\r\ncan’t be garbage-collected\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:23:54.450Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:23:54.450Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1ff1ead8593621e2958ec"
+  },
+  "groupId": "WeakRef",
+  "keywords": [
+    "Weak",
+    "Ref",
+    "WeakRef"
+  ],
+  "content": "WeakRef\r\ncaching without preventing garbage collection\r\nmemory-sensitive data structures\r\n\r\nlet obj = { data: 123 };\r\nlet ref = new WeakRef(obj);\r\nref.deref();\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:24:14.018Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:24:14.018Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1ff75ad8593621e2958ef"
+  },
+  "groupId": "Debounce vs Throttle",
+  "keywords": [
+    "Debounce",
+    "Throttle"
+  ],
+  "content": "Debounce vs Throttle\r\n\r\nDebounce = Delays function execution until user stops triggering events\r\nThrottle = Limits how often a function can execute\r\n\r\nDebounce\r\n\r\nRuns after the event stops for a specified time.\r\n\r\nfunction debounce(fn, delay) {\r\n  let timer;\r\n\r\n  return (...args) => {\r\n    clearTimeout(timer);\r\n    timer = setTimeout(() => fn(...args), delay);\r\n  };\r\n}\r\n\r\nconst search = debounce((value) => {\r\n  console.log(\"API call:\", value);\r\n}, 500);\r\n\r\nsearch(\"r\");\r\nsearch(\"re\");\r\nsearch(\"rea\");\r\nsearch(\"react\"); // Only this runs after 500ms\r\n-----\r\n\r\nThrottle\r\n\r\nRuns at most once during a specified time interval.\r\n\r\nfunction throttle(fn, delay) {\r\n  let last = 0;\r\n\r\n  return (...args) => {\r\n    const now = Date.now();\r\n\r\n    if (now - last >= delay) {\r\n      last = now;\r\n      fn(...args);\r\n    }\r\n  };\r\n}\r\n\r\nconst scrollHandler = throttle(() => {\r\n  console.log(\"scroll\");\r\n}, 500);\r\n\r\nwindow.addEventListener(\"scroll\", scrollHandler);",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:25:41.806Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:25:41.806Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1ff9cad8593621e2958f2"
+  },
+  "groupId": "requestAnimationFrame,requestIdleCallback,stopPropagation,stopImmediatePropagation",
+  "keywords": [
+    "requestAnimationFrame",
+    "requestIdleCallback",
+    "stopPropagation",
+    "stopImmediatePropagation"
+  ],
+  "content": "requestAnimationFrame = Runs code before the next browser repaint\r\nrequestIdleCallback = Runs code when the browser is idle\r\nstopPropagation  = Stops bubbling to parent but dont stop other listner\r\nstopImmediatePropagation = Stops bubbling to parent and other listner\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:26:20.176Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:26:20.176Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1ffaaad8593621e2958f5"
+  },
+  "groupId": "Referential equality",
+  "keywords": [
+    "Referential",
+    "equality"
+  ],
+  "content": "Referential equality\r\ncomparing whether two variables point to the same object or array in memory, rather than whether they contain the same values.\r\n\r\nconst obj1 = { name: \"Alice\" };\r\nconst obj2 = { name: \"Alice\" };\r\nconst obj3 = obj1;\r\nconsole.log(obj1 === obj2); // false\r\nconsole.log(obj1 === obj3); // true\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:26:34.341Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:26:34.341Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1ffbaad8593621e2958f8"
+  },
+  "groupId": "Complexicity",
+  "keywords": [
+    "Complexicity"
+  ],
+  "content": "Complexicity\r\nTime Complexity → How much time does the code take as input grows?\r\nSpace Complexity → How much extra memory does the code use as input grows?\r\n\r\nNo loop                 => O(1)\r\n1 loop                  => O(n)\r\n2 nested loops          => O(n²)\r\n3 nested loops          => O(n³)\r\nDivide by 2 each step   => O(log n)\r\nSort + anything linear  => O(n log n)\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:26:50.127Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:26:50.127Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1ffdcad8593621e2958fb"
+  },
+  "groupId": "Encapsulation",
+  "keywords": [
+    "Encapsulation"
+  ],
+  "content": "1. Encapsulation\r\nbinds data and methods into a single class\r\n\r\nBenefits\r\n1 Protects data\r\n2 Prevents accidental modification\r\n3 Makes code easier to maintain\r\n\r\nclass BankAccount {\r\n  #balance = 0; // Private field\r\n\r\n  deposit(amount) {\r\n    this.#balance += amount;\r\n  }\r\n\r\n  getBalance() {\r\n    return this.#balance;\r\n  }\r\n}\r\n\r\nconst account = new BankAccount();\r\naccount.deposit(1000);\r\nconsole.log(account.getBalance()); // 1000\r\n// console.log(account.#balance); // ❌ Error (private)\r\n",
+  "ct": "OOPS",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:27:24.439Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:27:24.439Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1ffeead8593621e2958fe"
+  },
+  "groupId": "Inheritance",
+  "keywords": [
+    "Inheritance"
+  ],
+  "content": "2. Inheritance\r\nInheritance allows one class to reuse properties and methods of another class.\r\n\r\nclass Animal {\r\n  speak() {\r\n    console.log(\"Animal makes sound\");\r\n  }\r\n}\r\n\r\nclass Dog extends Animal {\r\n  bark() {\r\n    console.log(\"Dog barks\");\r\n  }\r\n}\r\n\r\nconst dog = new Dog();\r\ndog.speak(); // inherited\r\ndog.bark();\r\n",
+  "ct": "OOPS",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:27:42.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:27:42.225Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac1fffcad8593621e295901"
+  },
+  "groupId": "Polymorphism",
+  "keywords": [
+    "Polymorphism"
+  ],
+  "content": "3. Polymorphism\r\nPolymorphism means one interface, many implementations.\r\n\r\n\r\nclass Animal {\r\n  speak() {\r\n    console.log(\"Animal sound\");\r\n  }\r\n}\r\n\r\nclass Dog extends Animal {\r\n  speak() {\r\n    console.log(\"Bark\");\r\n  }\r\n}\r\n\r\nclass Cat extends Animal {\r\n  speak() {\r\n    console.log(\"Meow\");\r\n  }\r\n}\r\n\r\nconst animals = [\r\n  new Dog(),\r\n  new Cat()\r\n];\r\n\r\nanimals.forEach(animal => animal.speak());\r\n",
+  "ct": "OOPS",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:27:56.369Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:27:56.369Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac2000fad8593621e295904"
+  },
+  "groupId": "Abstraction",
+  "keywords": [
+    "Abstraction"
+  ],
+  "content": "4. Abstraction\r\nhiding internal implementation details and showing only essential functionality to the user.\r\n\r\nclass Shape {\r\n  area() {\r\n    throw new Error(\"Method must be implemented\");\r\n  }\r\n}\r\n\r\nclass Circle extends Shape {\r\n  constructor(radius) {\r\n    super();\r\n    this.radius = radius;\r\n  }\r\n\r\n  area() {\r\n    return Math.PI * this.radius * this.radius;\r\n  }\r\n}\r\n\r\nconst circle = new Circle(5);\r\nconsole.log(circle.area());\r\n\r\nsupport multiple inheritance = no\r\nA class can extend only one class\r\n\r\n",
+  "ct": "OOPS",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:28:15.764Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:28:32.100Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac20031ad8593621e29590a"
+  },
+  "groupId": "Factory pattern",
+  "keywords": [
+    "Factory",
+    "pattern"
+  ],
+  "content": "Factory pattern\r\nCreates objects without exposing creation logic.\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:28:49.791Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:28:49.791Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac2005aad8593621e29590d"
+  },
+  "groupId": "IIFE (Immediately Invoked Function Expression)",
+  "keywords": [
+    "IIFE",
+    "Immediately",
+    "Invoked",
+    "Function",
+    "Expression"
+  ],
+  "content": "IIFE (Immediately Invoked Function Expression)\r\na function that is defined and executed immediately after it is created.\r\n\r\n(function () {\r\n    console.log(\"Hello\");\r\n})();\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:29:30.874Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:29:30.874Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6ac2006cad8593621e295910"
+  },
+  "groupId": "Memory Types",
+  "keywords": [
+    "Memory",
+    "Types"
+  ],
+  "content": "Memory Types\r\n\r\n1. Stack Memory\r\nStores primitive values\r\nStores function execution context\r\n\r\n2. Heap Memory\r\nStores reference types\r\nObject\r\nArray\r\nFunction\r\nDate\r\nMap\r\nSet\r\nWeakMap\r\nWeakSet\r\nRegExp\r\nPromise\r\n",
+  "ct": "javascript",
+  "prt": null,
+  "createdAt": {
+    "$date": "2026-10-04T07:29:48.463Z"
+  },
+  "updatedAt": {
+    "$date": "2026-10-04T07:29:48.463Z"
+  },
+  "__v": 0
+}]
